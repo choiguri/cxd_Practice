@@ -22,19 +22,19 @@ public:
 
 protected:
 
-	// Ä³¸¯ÅÍ µ¥ÀÌÅÍ °¡Á®¿À±â
+	// ìºë¦­í„° ë°ì´í„° ê°€ì ¸ì˜¤ê¸°
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "AnimData|References")
 	AWarriorHeroCharacter* OwningHeroCharacter;
 
-	// Relax »óÅÂ
+	// Relax ìƒíƒœ
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "AnimData|LocomotionData")
 	bool bShouldEnterRelaxState;
 
-	// Relax »óÅÂ µ¹ÀÔÇÒ µô·¹ÀÌ ½Ã°£
+	// Relax ìƒíƒœ ëŒì…í•  ë”œë ˆì´ ì‹œê°„
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "AnimData|LocomotionData")
 	float EnterRelaxtStateThreshold = 5.f;
 
-	// Idle »óÅÂ À¯Áö ½Ã°£ ÃßÀû º¯¼ö
+	// Idle ìƒíƒœ ìœ ì§€ ì‹œê°„ ì¶”ì  ë³€ìˆ˜
 	float IdleElpasedTime;
 
 };

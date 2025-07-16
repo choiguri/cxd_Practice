@@ -69,7 +69,7 @@ void AWarriorHeroCharacter::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
 
-	// Á¦´ë·Î ÇÒ´ç µÆ´ÂÁö È®ÀÎ µğ¹ö±×
+	// ì œëŒ€ë¡œ í• ë‹¹ ëëŠ”ì§€ í™•ì¸ ë””ë²„ê·¸
 	/*if (WarriorAbilitySystemComponent && WarriorAttributeSet)
 	{
 		const FString ASCText = FString::Printf(TEXT("Owner Actor: %s, AvatarActor: %s"), *WarriorAbilitySystemComponent->GetOwnerActor()->GetActorLabel(), *WarriorAbilitySystemComponent->GetAvatarActor()->GetActorLabel());
@@ -78,7 +78,7 @@ void AWarriorHeroCharacter::PossessedBy(AController* NewController)
 		Debug::Print(TEXT("AttributeSet valid. ") + ASCText, FColor::Green);
 	}*/
 
-	// Vaild ¶û NullÀÇ Â÷ÀÌ¸¦ Àß ¾Ë¾Æ¾ßµÊ.
+	// Vaild ë‘ Nullì˜ ì°¨ì´ë¥¼ ì˜ ì•Œì•„ì•¼ë¨.
 	if (!CharacterStartUpData.IsNull())
 	{
 		if (UDataAsset_StartUpDataBase* LoadedData = CharacterStartUpData.LoadSynchronous())

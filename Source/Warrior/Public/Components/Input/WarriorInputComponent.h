@@ -21,22 +21,22 @@ public:
 		ETriggerEvent TriggerEvent, UserObject* ContextObject, CallbackFunc Func);
 };
 
-// alt + enter ÇßÀ» ¶§ template ¸¸µé±â·Î ¸¸µê
-// ÇØ´ç ¹æ½ÄÀ¸·Î Æ÷ÀÎÅÍ¸¦ È®ÀÎÇÏ¿© ¾î¶² ÀÌÀ¯·Î ºÒ·ÁÁ³´ÂÁö 
+// alt + enter í–ˆì„ ë•Œ template ë§Œë“¤ê¸°ë¡œ ë§Œë“¦
+// í•´ë‹¹ ë°©ì‹ìœ¼ë¡œ í¬ì¸í„°ë¥¼ í™•ì¸í•˜ì—¬ ì–´ë–¤ ì´ìœ ë¡œ ë¶ˆë ¤ì¡ŒëŠ”ì§€ 
 template<class UserObject, typename CallbackFunc>
 inline void UWarriorInputComponent::BindNativeInputAction(const UDataAsset_InputConfig* InInputConfig, const FGameplayTag& InInputTag, 
 ETriggerEvent TriggerEvent, UserObject* ContextObject, CallbackFunc Func)
 {
-	// À¯È¿ÇÏÁö ¾ÊÀ¸¸é ÀÇµµÀûÀ¸·Î ¿À·ù¸¦ ¹ß»ı½ÃÄÑ ÇÁ·Î±×·¥ Áß´ÜÇÏµµ·Ï Ã¼Å©ÇÔ
-	// check·Î ÇßÀ» ¶§´Â Æ÷ÀÎÅÍ·Î ½ÇÇàµÇ´Â°Ç Á¦´ë·Î È®ÀÎÇÏ±â ¾î·Á¿ò
+	// ìœ íš¨í•˜ì§€ ì•Šìœ¼ë©´ ì˜ë„ì ìœ¼ë¡œ ì˜¤ë¥˜ë¥¼ ë°œìƒì‹œì¼œ í”„ë¡œê·¸ë¨ ì¤‘ë‹¨í•˜ë„ë¡ ì²´í¬í•¨
+	// checkë¡œ í–ˆì„ ë•ŒëŠ” í¬ì¸í„°ë¡œ ì‹¤í–‰ë˜ëŠ”ê±´ ì œëŒ€ë¡œ í™•ì¸í•˜ê¸° ì–´ë ¤ì›€
 	// check(InInputConfig);
-	// checkf : Ãâ·ÂÀ» ÅëÇØ Ã¼Å©°¡ Á¦´ë·Î ÀÌ·ç¾î Á³´ÂÁö Ãâ·ÂÇÏ´Â ÇÔ¼ö·Î È®ÀÎ
+	// checkf : ì¶œë ¥ì„ í†µí•´ ì²´í¬ê°€ ì œëŒ€ë¡œ ì´ë£¨ì–´ ì¡ŒëŠ”ì§€ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜ë¡œ í™•ì¸
 	checkf(InInputConfig, TEXT("Input config data asset is null,can not proceed with binding"));
 
 	if (UInputAction* FoundAction = InInputConfig->FindNativeInputActionByTag(InInputTag))
 	{
-		// EnhancedInputComponent¿¡ ÀÖ´Â ÇÔ¼ö (±Ã±İÇÏ¸é F12 go go)
+		// EnhancedInputComponentì— ìˆëŠ” í•¨ìˆ˜ (ê¶ê¸ˆí•˜ë©´ F12 go go)
 		BindAction(FoundAction, TriggerEvent, ContextObject, Func);
 	}
-	// ´ÙÇÏ°í ÇÁ·ÎÁ§Æ® ¼¼ÆÃ¿¡¼­ InputComponent¸¦ º¯°æÇØÁà¾ßÇÔ
+	// ë‹¤í•˜ê³  í”„ë¡œì íŠ¸ ì„¸íŒ…ì—ì„œ InputComponentë¥¼ ë³€ê²½í•´ì¤˜ì•¼í•¨
 }

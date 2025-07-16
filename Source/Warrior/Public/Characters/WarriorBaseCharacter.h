@@ -21,7 +21,7 @@ public:
 	// Sets default values for this character's properties
 	AWarriorBaseCharacter();
 
-	// ÇØ´ç Begin ~ End ´Â °¢ ¾îµğ¼­ °¡Á®¿Ô´ÂÁö ¸í½ÃÀû Ç¥½ÃÇÏ±â À§ÇÑ ¾ğ¸®¾ó ¿£Áø ³»ºÎ ¹ıÄ¢ (°­ÀÇ¿¡¼­µµ ÀÌ°É µû¶óÇÔ)
+	// í•´ë‹¹ Begin ~ End ëŠ” ê° ì–´ë””ì„œ ê°€ì ¸ì™”ëŠ”ì§€ ëª…ì‹œì  í‘œì‹œí•˜ê¸° ìœ„í•œ ì–¸ë¦¬ì–¼ ì—”ì§„ ë‚´ë¶€ ë²•ì¹™ (ê°•ì˜ì—ì„œë„ ì´ê±¸ ë”°ë¼í•¨)
 
 	//~ Begin IAbilitySystemInterface Interface.
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const;

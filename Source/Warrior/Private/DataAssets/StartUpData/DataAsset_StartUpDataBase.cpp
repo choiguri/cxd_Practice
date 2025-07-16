@@ -7,7 +7,7 @@
 
 void UDataAsset_StartUpDataBase::GiveToAbilitySystemComponent(UWarriorAbilitySystemComponent* InASCToGive, int32 ApplyLevel)
 {
-	// ÀÌ°Ô À¯È¿ÇÏÁö ¾ÊÀ¸¸é Å« ÁöÀåÀ» ¹ÌÄ§
+	// ì´ê²Œ ìœ íš¨í•˜ì§€ ì•Šìœ¼ë©´ í° ì§€ì¥ì„ ë¯¸ì¹¨
 	check(InASCToGive);
 
 	GrantAbilities(ActivateOnGivenAbilities, InASCToGive, ApplyLevel);
@@ -16,13 +16,13 @@ void UDataAsset_StartUpDataBase::GiveToAbilitySystemComponent(UWarriorAbilitySys
 
 void UDataAsset_StartUpDataBase::GrantAbilities(const TArray<TSubclassOf<UWarriorGameplayAbility>>& InAbilitiesToGive, UWarriorAbilitySystemComponent* InASCToGive, int32 ApplyLevel)
 {
-	// ºñ¾î ÀÖ´Ù¸é ÀÌ¹Ì ºÎ¿©ÇÑ°ÍÀÌ¶ó ¹Ù·Î Á¾·á
+	// ë¹„ì–´ ìˆë‹¤ë©´ ì´ë¯¸ ë¶€ì—¬í•œê²ƒì´ë¼ ë°”ë¡œ ì¢…ë£Œ
 	if (InAbilitiesToGive.IsEmpty())
 	{
 		return;
 	}
 
-	// ¾Æ´Ï¸é ¹İº¹¹®À» ÅëÇØ ºÎ¿©ÇÑ´Ù.
+	// ì•„ë‹ˆë©´ ë°˜ë³µë¬¸ì„ í†µí•´ ë¶€ì—¬í•œë‹¤.
 	for (const TSubclassOf<UWarriorGameplayAbility>& Ability : InAbilitiesToGive)
 	{
 		if (!Ability) continue;

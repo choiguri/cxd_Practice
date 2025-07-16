@@ -11,11 +11,11 @@ void UWarriorGameplayAbility::OnGiveAbility(const FGameplayAbilityActorInfo* Act
 	/*
 	const FGameplayAbilityActorInfo* ActorInfo
 
-	ActorInfo¸¦ °¡º¸¸é ´Ù¾çÇÑ Á¤º¸µéÀÌ ÀúÀåµÇ¾î ÀÖ¾î¼­ 
-	ÇØ´ç Á¤º¸µéÀ» À¯¿ëÇÏ°Ô »ç¿ë °¡´ÉÇÔ
+	ActorInfoë¥¼ ê°€ë³´ë©´ ë‹¤ì–‘í•œ ì •ë³´ë“¤ì´ ì €ì¥ë˜ì–´ ìˆì–´ì„œ 
+	í•´ë‹¹ ì •ë³´ë“¤ì„ ìœ ìš©í•˜ê²Œ ì‚¬ìš© ê°€ëŠ¥í•¨
 	*/
 
-	// Given Çü½Ä ¼³Á¤ ÇØµÒ
+	// Given í˜•ì‹ ì„¤ì • í•´ë‘ 
 	if (AbilityActivationPolicy == EWarriorAbilityActivationPolicy::OnGiven)
 	{
 		if (ActorInfo && !Spec.IsActive())

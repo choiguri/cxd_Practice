@@ -11,11 +11,11 @@ class UInputAction;
 class UInputMappingContext;
 
 
-// ©РаВюс ╟Э╥ц ╣╔юлем ют╥б ╟Э╦╝гр ця╟Щ ╣╔юлем╪б
+// Л⌡─Л╖│Л·└ Й╢─К═╗ К█╟Л²╢М└╟ Л·┘К═╔ Й╢─К╕╛М∙═ Л╢²Й╢└ К█╟Л²╢М└╟Л┘▀
 USTRUCT(BlueprintType)
 struct FWarriorInputActionConfig
 {
-	GENERATED_BODY()	// гь╢Г ╦ее╘╥н╦╕ ╬х Ёж╬Н╣н╦И ддфдюо ╬х╣й
+	GENERATED_BODY()	// М∙╢К▀╧ К╖╓М│╛К║°К╔╪ Л∙┬ К└ёЛ√╢К▒░К╘╢ Л╩╢М▄▄Л²╪ Л∙┬К░╗
 
 public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (Categories = "InputTag"))

@@ -10,7 +10,7 @@
 class USpringArmComponent;
 class UCameraComponent;
 class UDataAsset_InputConfig;
-struct FInputActionValue;	// ¼±¾ğÇØÁØ³à¼®
+struct FInputActionValue;	// ì„ ì–¸í•´ì¤€ë…€ì„
 /**
  * 
  */
@@ -46,7 +46,7 @@ private:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "CharacterData", meta = (AllowPrivateAccess = "true"))
 	UDataAsset_InputConfig* InputConfigDataAsset;
 
-	// const·Î ¼³Á¤Çß±â ¶§¹®¿¡ ºÎ¸ğ¿Í »ó°ü¾øÀÌ »ç¿ë °¡´ÉÇÑ struct¿¡¼­ ¼±¾ğ¸¸ ÇØÁÖ¸é ÀÚÀ¯·Ó°Ô »ç¿ë°¡´É
+	// constë¡œ ì„¤ì •í–ˆê¸° ë•Œë¬¸ì— ë¶€ëª¨ì™€ ìƒê´€ì—†ì´ ì‚¬ìš© ê°€ëŠ¥í•œ structì—ì„œ ì„ ì–¸ë§Œ í•´ì£¼ë©´ ììœ ë¡­ê²Œ ì‚¬ìš©ê°€ëŠ¥
 	void Input_Move(const FInputActionValue& InputActionValue);
 	void Input_Look(const FInputActionValue& InputActionValue);
 #pragma endregion

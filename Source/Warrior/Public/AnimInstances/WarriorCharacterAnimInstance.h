@@ -17,9 +17,9 @@ class WARRIOR_API UWarriorCharacterAnimInstance : public UWarriorBaseAnimInstanc
 	GENERATED_BODY()
 
 public:
-	// Animinstance ¿¡¼­ ÄÁÆ®·Ñ T·Î °Ë»öÇØº¸¸é ºó ÇÔ¼öµéÀÓ
-	// °Â Áß¿¡ NativeThreadSafeUpdateAnimationÀº ÁÖ¼®À» È®ÀÎÇØº¸¸é 
-	// worker thread¿¡¼­ °ü¸®ÇÏ´Â°É ¾Ë ¼ö ÀÖ¾î¼­ ´õ À¯¿ëÇÑ ÇÔ¼öÀÌ´Ù.
+	// Animinstance ì—ì„œ ì»¨íŠ¸ë¡¤ Të¡œ ê²€ìƒ‰í•´ë³´ë©´ ë¹ˆ í•¨ìˆ˜ë“¤ì„
+	// ê±” ì¤‘ì— NativeThreadSafeUpdateAnimationì€ ì£¼ì„ì„ í™•ì¸í•´ë³´ë©´ 
+	// worker threadì—ì„œ ê´€ë¦¬í•˜ëŠ”ê±¸ ì•Œ ìˆ˜ ìˆì–´ì„œ ë” ìœ ìš©í•œ í•¨ìˆ˜ì´ë‹¤.
 	virtual void NativeInitializeAnimation() override;
 	virtual void NativeThreadSafeUpdateAnimation(float DeltaSeconds);
 

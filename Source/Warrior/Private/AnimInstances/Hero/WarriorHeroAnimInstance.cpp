@@ -6,7 +6,7 @@
 
 void UWarriorHeroAnimInstance::NativeInitializeAnimation()
 {
-	// ÀÌ¹ø¿¡´Â ÀÚÃ¼ ÇÔ¼ö¸¦ ÀçÁ¤ÀÇÇÏ±â ¶§¹®¿¡ Super¸¦ È£ÃâÇØ¾ßÇÔ
+	// ì´ë²ˆì—ëŠ” ìì²´ í•¨ìˆ˜ë¥¼ ì¬ì •ì˜í•˜ê¸° ë•Œë¬¸ì— Superë¥¼ í˜¸ì¶œí•´ì•¼í•¨
 	Super::NativeInitializeAnimation();
 
 	if (OwningCharacter)
@@ -17,7 +17,7 @@ void UWarriorHeroAnimInstance::NativeInitializeAnimation()
 
 void UWarriorHeroAnimInstance::NativeThreadSafeUpdateAnimation(float DeltaSeconds)
 {
-	// ÀÌ¹ø¿¡´Â ÀÚÃ¼ ÇÔ¼ö¸¦ ÀçÁ¤ÀÇÇÏ±â ¶§¹®¿¡ Super¸¦ È£ÃâÇØ¾ßÇÔ
+	// ì´ë²ˆì—ëŠ” ìì²´ í•¨ìˆ˜ë¥¼ ì¬ì •ì˜í•˜ê¸° ë•Œë¬¸ì— Superë¥¼ í˜¸ì¶œí•´ì•¼í•¨
 	Super::NativeThreadSafeUpdateAnimation(DeltaSeconds);
 
 	if (bHasAcceleration)
