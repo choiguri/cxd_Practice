@@ -46,7 +46,8 @@ private:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "CharacterData", meta = (AllowPrivateAccess = "true"))
 	UDataAsset_InputConfig* InputConfigDataAsset;
 
-	// const로 설정했기 때문에 부모와 상관없이 사용 가능한 struct에서 선언만 해주면 자유롭게 사용가능
+	// const &로 레퍼런스 설정했기 때문에
+	// 부모와 상관없이 사용 가능한 struct에서 선언만 해주면 자유롭게 사용가능
 	void Input_Move(const FInputActionValue& InputActionValue);
 	void Input_Look(const FInputActionValue& InputActionValue);
 #pragma endregion

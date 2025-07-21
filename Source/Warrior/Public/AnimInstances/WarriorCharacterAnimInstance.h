@@ -19,7 +19,7 @@ class WARRIOR_API UWarriorCharacterAnimInstance : public UWarriorBaseAnimInstanc
 public:
 	// Animinstance 에서 컨트롤 T로 검색해보면 빈 함수들임
 	// 걔 중에 NativeThreadSafeUpdateAnimation은 주석을 확인해보면 
-	// worker thread에서 관리하는걸 알 수 있어서 더 유용한 함수이다.
+	// worker thread에서 관리하는걸 알 수 있어서 더 유용한 함수이다. => 성능 병목 현상을 일으킬때 최적화 가능
 	virtual void NativeInitializeAnimation() override;
 	virtual void NativeThreadSafeUpdateAnimation(float DeltaSeconds);
 

@@ -19,9 +19,10 @@ public:
 
 	void BindNativeInputAction(const UDataAsset_InputConfig* InInputConfig, const FGameplayTag& InInputTag, 
 		ETriggerEvent TriggerEvent, UserObject* ContextObject, CallbackFunc Func);
+	// alt + enter 했을 때 template 만들기로 만듦 (아래 템플릿)
 };
 
-// alt + enter 했을 때 template 만들기로 만듦
+
 // 해당 방식으로 포인터를 확인하여 어떤 이유로 불려졌는지 
 template<class UserObject, typename CallbackFunc>
 inline void UWarriorInputComponent::BindNativeInputAction(const UDataAsset_InputConfig* InInputConfig, const FGameplayTag& InInputTag, 
@@ -38,5 +39,5 @@ ETriggerEvent TriggerEvent, UserObject* ContextObject, CallbackFunc Func)
 		// EnhancedInputComponent에 있는 함수 (궁금하면 F12 go go)
 		BindAction(FoundAction, TriggerEvent, ContextObject, Func);
 	}
-	// 다하고 프로젝트 세팅에서 InputComponent를 변경해줘야함
+	// 다하고 상단바 -> project setting -> InputComponent를 변경해줘야함
 }

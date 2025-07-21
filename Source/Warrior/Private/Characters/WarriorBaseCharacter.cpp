@@ -14,6 +14,7 @@ AWarriorBaseCharacter::AWarriorBaseCharacter()
 
 	GetMesh()->bReceivesDecals = false;
 
+	// AS Comp, AttributeSet 부착
 	WarriorAbilitySystemComponent = CreateDefaultSubobject<UWarriorAbilitySystemComponent>(TEXT("WarriorAbilitySystemComponent"));
 	WarriorAttributeSet = CreateDefaultSubobject<UWarriorAttributeSet>(TEXT("WarriorAttributeSet"));
 }

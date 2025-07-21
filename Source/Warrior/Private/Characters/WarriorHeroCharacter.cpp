@@ -42,14 +42,18 @@ AWarriorHeroCharacter::AWarriorHeroCharacter()
 
 void AWarriorHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
+	// DataAsset 유효성 검사
 	checkf(InputConfigDataAsset, TEXT("Forgot to assign a valid data asset as input config"));
 
+	// 캐릭터를 조종하는 로컬 플레이어 객체 획득
 	ULocalPlayer* LocalPlayer = GetController<APlayerController>()->GetLocalPlayer();
 
+	// Enhanced Input 기능을 담당하는 서브시스템 획득
+	// 언리얼의 서브시스템 아키텍처를 통해 Input 시스템을 관리
+	// 이 서브시스템에 Input Mapping Context를 등록해야 입력이 반영
 	UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(LocalPlayer);
 
 	check(Subsystem);
-
 	Subsystem->AddMappingContext(InputConfigDataAsset->DefaultMappingContext, 0);
 
 	UWarriorInputComponent* WarriorInputComponent = CastChecked<UWarriorInputComponent>(PlayerInputComponent);
@@ -81,6 +85,7 @@ void AWarriorHeroCharacter::PossessedBy(AController* NewController)
 	// Vaild 랑 Null의 차이를 잘 알아야됨.
 	if (!CharacterStartUpData.IsNull())
 	{
+		// 데이터를 동기식(즉시 불러와야되는 데이터)으로 처리
 		if (UDataAsset_StartUpDataBase* LoadedData = CharacterStartUpData.LoadSynchronous())
 		{
 			LoadedData->GiveToAbilitySystemComponent(WarriorAbilitySystemComponent);
@@ -88,6 +93,7 @@ void AWarriorHeroCharacter::PossessedBy(AController* NewController)
 	}
 }
 
+// 움직임 설정
 void AWarriorHeroCharacter::Input_Move(const FInputActionValue& InputActionValue)
 {
 	const FVector2D MovementVector = InputActionValue.Get<FVector2D>();
@@ -105,6 +111,7 @@ void AWarriorHeroCharacter::Input_Move(const FInputActionValue& InputActionValue
 	}
 }
 
+// 시야 설정
 void AWarriorHeroCharacter::Input_Look(const FInputActionValue& InputActionValue)
 {
 	const FVector2D LookAxisVector = InputActionValue.Get<FVector2D>();

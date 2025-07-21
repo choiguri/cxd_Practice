@@ -1,0 +1,133 @@
+12. input config data asset
+
+: enhancedinput 기능을 맨날 같은 곳에서 똑같이 정의시키다가
+DataAsset으로 관리시키는 방법을 알려줌
+WarriorGameplayTags 로 input 마다의 명령어를 저장시키고
+DataAsset으로 설정시킴
+DA_InputConfig 블루프린트로 만들어서 가지고 있음
+
+
+13. Custom Enhanced input component
+
+: UE5에서 제공하는 EnhancedInputComponent를 상속받는 cpp 파일 생성
+template로 생성해서 이미 정의되어 있는 component라서 inline으로 미리 불러오기 설정
+마지막에 "상단바 -> project setting -> InputComponent를 WarriorInputComponent로 변경"
+
+
+14. Binding input
+
+: 인풋 액션을 캐릭터랑 레퍼런스 해줘야 하는데
+하드 vs 소프트
+하드 : 항상 사용하는 자산
+소프트 : 조건부 로딩, 아이템 스토어 등등 
+	ex) TSoftObjectPtr -> 경로만 들고 있다가 LoadSynchronous() 또는 AsyncLoad()로 로딩.
+무조건 하드 래퍼런스로 가야지 입력 같은건
+
+HereCharacter.cpp에 입력 설정 해줬음
+마지막에 BP Character에 DataAsset 칸 설정해주기
+
+bUseControllerRotationPitch = false;
+bUseControllerRotationYaw = false;
+bUseControllerRotationRoll = false;
+CameraBoom->bUsePawnControlRotation = true;
+GetCharacterMovement()->bOrientRotationToMovement = true;
+=> 이렇게 되어있어야 캐릭터가 조종키 방향으로 몸 돌림
+=> (주의사항) CPP에 저렇게 작성했다고 해도 BP에 반영 안되어있을 때가 있음 or 혹은 BP가 미리 생성되면서 초깃값이 정해져있을 수 있음
+
+15. Character Anim Instance
+
+:  애님 인스턴스를 계층별로 나눠서 사용할 예정
+
+Base Anim -> Character Anim(플레이어, 적) -> Hero Anim
+Base Anim -> HeroLinkedAnimLayer
+
+
+16. Hero AnimBP
+
+: BlendSpace Locomotion 생성함
+
+
+17. Hero Anim Instance
+
+: Relax 애니메이션 추가
+Random Sequence로 2가지 모션 출력되도록 설정하고
+Relax 돌입 시간 설정 =  2초
+
+
+18. Gameplay Ability system
+
+: Weapon Spawn 계층구조
+
+Ability System Comp
+-> Set Up Spawn Ability
+-> Create Weapon Class
+-> Grant Ability
+-> Finifh Spawning
+
+보통 GAS라고 한다면 해당 요소들로 구성됨
+
+Ability System comp
+- GameplayAbility (Attack / Roll / Block)
+- AttributeSet (health / Attack power)
+	+ GameplayCues(VFX/Sounds)
+- Gameplay Effecet (Change attributes)
++ GameplayTags (AbilityID..) 
+
+Plugin 활성화 => GameplayAbility
+Build.cs에 추가 => GameplayTasks
+
+UPROPERTY에 meta = (AllowPrivateAccess = "true")
+private, protected 범위일 때 에디터에서는
+EditDefaultsOnly 이런식으로 설정되어 있으면 의도적으로 에디터에 접근 가능하도록 설정해줌
+해당 개념은 런타임 리플렉션에서 중요하게 쓰임
+
+FORCEINLINE = 언리얼 매크로
+: 가능한한 무조건 inline 으로 처리하도록 만든다.
+
+WarriorBaseCharacter.h에 
+pulbic : IAbilitySystemInterface 추가
+
+
+19. Ability Activation Policy
+
+: 어빌리티 활성 정책 만들 예정
+OnGiven / OnTriggered
+
+Shared/GameplayAbility 파일에 BP_GAS 파일 만듦
+BP에 정책 변경 -> OnGive 상태로
+
+
+20. Set Up Weapon Class
+
+: mesh, collision 등 무기 세팅했음 BP도 만듦
+
+
+21. Set Up Hero Weapon
+
+: GA_Shared_SpawnWeapon 에서 이벤트 그래프 BP로 작성함
+"Get Avatar Actor from Actor info"는 많이 쓰이니까 알아두는게 좋음
+
+OnGiven으로 해놨기 때문에 EndAbility를 발동시키면 즉시 종료됨.
+무기 스폰 -> 무기 해제(삭제)
+
+GA_Shared_SpawnAXE 생성 (소켓, SpawnClass 추가)
+소켓 만들어서 장착 위치 지정까지 하고 마무리함
+
+
+22. Start Up Data
+
+: Data 관련 cpp 만들어서 코드 작성
+활성화용 리액트용 2개 작성
+각 부여하는 함수 작성
+
+BP로 DA_Hero 작성 -> 활성화 Data 쪽에 SpawnAxe 넣어둠
+
+
+23. Synchronous Loading
+
+: Synchronous vs Asynchronous 차이 (노션에 작성)
+
+Base & Warrior 에 PossessBy() 함수에 Data 관련 추가
+에디터 상 캐릭터가 등에 Axe 짊어지게 됨 (데이터 로딩 성공)
+
+24. 
