@@ -135,7 +135,40 @@ Base & Warrior 에 PossessBy() 함수에 Data 관련 추가
 
 
 ### 섹션 3 Melee Combo System
+- 무기 장착 / 해제
+- 공격 콤보 (약, 강)
 
 28. Pawn Extersion Component
 
-: 
+: GAS에서 AbilitySystem이 Pawn에 붙은 방식과 타입을 통일 시키도록
+PawnExtensionComponent를 만들어서 관리
+확장성 있는 컴포넌트를 붙여서 해당 소유권(Pawn, Controller)을 주장하도록 해줌
+
+
+29. Register Spawned Weapon
+
+: Player 관련 Tag 추가하고 Weapon을 Combat Comp와 관련해서
+무기가 스폰되어 있는지, 장착 중인지 등등 관리하도록 설정
+
+BP_Shared 쪽에 해당 값들 추가
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
