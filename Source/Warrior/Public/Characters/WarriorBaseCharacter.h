@@ -24,7 +24,7 @@ public:
 	// 해당 Begin ~ End 는 각 어디서 가져왔는지 명시적 표시하기 위한 언리얼 엔진 내부 법칙 (강의에서도 이걸 따라함)
 
 	//~ Begin IAbilitySystemInterface Interface.
-	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const;
+	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 	//~ End IAbilitySystemInterface Interface
 
 protected:

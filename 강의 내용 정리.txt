@@ -1,3 +1,5 @@
+### 섹션 2
+
 12. input config data asset
 
 : enhancedinput 기능을 맨날 같은 곳에서 똑같이 정의시키다가
@@ -130,4 +132,10 @@ BP로 DA_Hero 작성 -> 활성화 Data 쪽에 SpawnAxe 넣어둠
 Base & Warrior 에 PossessBy() 함수에 Data 관련 추가
 에디터 상 캐릭터가 등에 Axe 짊어지게 됨 (데이터 로딩 성공)
 
-24. 
+
+
+### 섹션 3 Melee Combo System
+
+28. Pawn Extersion Component
+
+: 
